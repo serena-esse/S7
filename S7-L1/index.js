@@ -1,27 +1,29 @@
 //ESERCIZIO 1
-
 class User {
-  constructor(_firstName, _lastName, _age, _location) {
-    (this.firstName = _firstName), (this.lastName = _lastName), (this.age = _age), (this._location = _location);
+  constructor(firstName, lastName, age, location) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.location = location;
   }
-  comparison(x, y) {
-    if (x < y) {
-      console.log(`${x} è più giovane di ${y}`);
-    } else console.log(`${x} è più vecchoi di ${y}`);
+
+  confrontaEta(altraPersona) {
+    if (this.age > altraPersona.age) {
+      return `${this.firstName} è più vecchio di ${altraPersona.firstName}`;
+    } else if (this.age < altraPersona.age) {
+      return `${this.firstName} è più giovane di ${altraPersona.firstName}`;
+    } else {
+      return `${this.firstName} ha la stessa età di ${altraPersona.firstName}`;
+    }
   }
 }
 
-const object1 = new User("Jojo", "Joestar", "27", "Tornino");
-console.log(object1);
+// Creazione di due istanze della classe User
+const utente1 = new User("Mario", "Rossi", 30, "Roma");
+const utente2 = new User("Luca", "Bianchi", 25, "Milano");
 
-const object2 = new User("Jampierre", "Polnareff", "26", "Parigi");
-
-console.log(comparison(object1.age, object2.age));
-
-const obj1prop = object1.age;
-console.log(obj1prop);
-const obj2prop = object2.age;
-console.log(obj2prop);
+// Verifica del confronto tra le età delle due persone
+console.log(utente1.confrontaEta(utente2));
 
 //ESERCIZIO 2
 
